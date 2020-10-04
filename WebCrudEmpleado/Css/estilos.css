@@ -1,0 +1,24 @@
+﻿body {
+}
+
+.table {
+width: 90%;
+background-color: #eee;
+}
+
+.table thead tr td {
+background-color:#777;
+color: #fff;
+padding: 5px 10px 5px 10px;   
+}
+
+.table tbody tr td {
+ background-color: #fff;
+ padding: 5px 10px 5px 10px;
+ }
+
+.master {
+margin-left: 5%;
+margin-right: 5%;
+padding: 5px 10px; 
+}
