@@ -6,23 +6,38 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Empleados</title>
-    <link href="Css/estilos.css" rel="stylesheet" />
+    <link href="Css/bootstrap.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">
-        <div class="master">
-           <h1>Lista Empleados</h1>
+        <div class="container">
+            <div class="card">
+               <div class="card-header">
+                <h1 class="text-center">Lista Empleados</h1>
+               </div>
 
-            <p>
-                <asp:ImageButton  ID="ibNuevo" runat="server" ImageUrl="~/img/add.png" OnClick="ibnuevo_click"/> 
+                <div class="card-body">
+                    <asp:ImageButton  ID="ibNuevo" runat="server" ImageUrl="~/Img/add.png" OnClick="ibnuevo_click"/> 
+              
+                
 
-            </p>
+                <asp:GridView ID="gvEmpleados" runat="server" AutoGenerateColumns="False" CssClass="table table-bordered table-striped"    
+                    OnRowEditing="gvEmpleados_RowEditing" >
+                    <Columns>
+                        <asp:BoundField DataField="num" HeaderText="Num.Empleado" />
+                        <asp:BoundField DataField="nombres" HeaderText="Nombre" />
+                        <asp:BoundField DataField="apellidos" HeaderText="Apellido" />
+                        <asp:BoundField DataField="email" HeaderText="Email" />
+                        <asp:BoundField DataField="telefono" HeaderText="Teléfono" />
+                        <asp:CommandField ButtonType="Image" HeaderText="Editar" EditImageUrl="~/Img/editar.png" DeleteText="Editar"  ShowEditButton="True" />
+                        
+                    </Columns>   
+                </asp:GridView>
+                </div>
 
-            <asp:GridView ID="gvEmpleados" runat="server" CssClass="table" >
-                           
-            </asp:GridView>
-
-        </div>
-    </form>
+                </div>
+            </div>
+        </form>
+    
 </body>
 </html>

@@ -1,9 +1,9 @@
 ﻿using Data;
-using System;
+//using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Web;
+//using System.Linq;
+//using System.Web;
 using System.Data.SqlClient;
 using Modelos;
 
@@ -15,12 +15,15 @@ namespace Buss
 
         public static DataTable listar01()
         {
-            string sql = " select * from empleado ";
+            //string sql = " select * from empleado ";
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = sql;
-            DataTable dt = db.ejecutarConsulta(cmd);
-            return dt;
+            //cmd.CommandType = CommandType.Text;  //Si es query escrita
+            cmd.CommandType = CommandType.StoredProcedure;
+            //cmd.CommandText = sql;
+            cmd.CommandText = "sp_listar_empleado";
+            // DataTable dt = db.ejecutarConsulta(cmd);
+            //return dt;
+            return db.ejecutarConsulta(cmd);
         }
 
 
@@ -55,13 +58,18 @@ namespace Buss
         public static Empleado buscar(int num)
         {
            
-            string sql = " select * from empleado where num =" +num;
+           // string sql = " select * from empleado where num =" +num;
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = sql;
+           // cmd.CommandType = CommandType.Text;
+            cmd.CommandType = CommandType.StoredProcedure;
+            // cmd.CommandText = sql;
+            cmd.CommandText = "sp_buscar_empleado";
+            cmd.Parameters.Add("@num", SqlDbType.Int).Value = num;
+
+
             DataTable dt = db.ejecutarConsulta(cmd);
             Empleado emp;
-            if (dt != null)
+            if (dt != null && dt.Rows.Count> 0)
             {
                 string nombres = dt.Rows[0]["nombres"].ToString();
                 string apellidos = dt.Rows[0]["apellidos"].ToString();
@@ -77,38 +85,56 @@ namespace Buss
             return emp;
         }
 
-        public static void Insert(Empleado emp)
+        public static bool Insert(Empleado emp)
         {
-            string sql = "insert into empleado";
-            sql += "(nombres, apellidos, email, telefono)";
-            sql += "values('"+ emp.Nombre+"','"+emp.Apellidos+"','"+emp.Email+"','"+emp.Telefono+"')";
+            //string sql = "insert into empleado";
+            //sql += "(nombres, apellidos, email, telefono)";
+            //sql += "values('"+ emp.Nombre+"','"+emp.Apellidos+"','"+emp.Email+"','"+emp.Telefono+"')";
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = sql;
-            db.ejecutarConsulta(cmd);
+            //cmd.CommandType = CommandType.Text;
+            cmd.CommandType = CommandType.StoredProcedure;
+            //cmd.CommandText = sql;
+            cmd.CommandText = "sp_insert_empleado";
+            cmd.Parameters.Add("@nombres", SqlDbType.VarChar, 50).Value = emp.Nombre;
+            cmd.Parameters.Add("@apellidos", SqlDbType.VarChar, 50).Value = emp.Apellidos;
+            cmd.Parameters.Add("@email", SqlDbType.VarChar, 50).Value = emp.Email;
+            cmd.Parameters.Add("@telefono", SqlDbType.Int).Value = emp.Telefono;
+            return db.ejecutarAccion(cmd);
         }
 
-        public static void Update(Empleado emp)
+        public static bool Update(Empleado emp)
         {
-            string sql = "updare empleado set ";
+            /*string sql = "updare empleado set ";
             sql += "nombres = '"+ emp.Nombre + "',";
             sql += "apellidos = '" + emp.Apellidos + "',";
             sql += "email = '" + emp.Email  + "',";
             sql += "telefono = '" + emp.Telefono + "'";
-            sql += "where num = '" + emp.Num + "'";
+            sql += "where num = '" + emp.Num + "'";*/
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = sql;
-            db.ejecutarConsulta(cmd);
+            //cmd.CommandType = CommandType.Text;
+            cmd.CommandType = CommandType.StoredProcedure;
+            //cmd.CommandText = sql;
+
+            cmd.CommandText = "sp_update_empleado";
+            cmd.Parameters.Add("@num", SqlDbType.Int).Value = emp.Num;
+            cmd.Parameters.Add("@nombres", SqlDbType.VarChar, 50).Value = emp.Nombre;
+            cmd.Parameters.Add("@apellidos", SqlDbType.VarChar, 50).Value = emp.Apellidos;
+            cmd.Parameters.Add("@email", SqlDbType.VarChar, 50).Value = emp.Email;
+            cmd.Parameters.Add("@telefono", SqlDbType.Int).Value = emp.Telefono;
+
+            return db.ejecutarAccion(cmd);
         }
 
-        public static void Delete(int num)
+        public static bool Delete(int num)
         {
-            string sql = "delete from empleado where num = " + num;
+            //string sql = "delete from empleado where num = " + num;
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = sql;
-            db.ejecutarConsulta(cmd);
+            //cmd.CommandType = CommandType.Text;
+            cmd.CommandType = CommandType.StoredProcedure;
+            //cmd.CommandText = sql;
+            cmd.CommandText = "sp_delete_empleado";
+            cmd.Parameters.Add("@num", SqlDbType.Int).Value = num;
+            return db.ejecutarAccion(cmd);
         }
     }
 }

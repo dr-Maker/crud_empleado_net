@@ -10,7 +10,7 @@
 namespace WebCrudEmpleado {
     
     
-    public partial class nuevo {
+    public partial class editar {
         
         /// <summary>
         /// Control form1.
@@ -22,13 +22,13 @@ namespace WebCrudEmpleado {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Control TextNum.
+        /// Control textNum.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextNum;
+        protected global::System.Web.UI.WebControls.TextBox textNum;
         
         /// <summary>
         /// Control textNombres.

@@ -25,6 +25,7 @@ namespace WebCrudEmpleado
                 string apellidos = textApellidos.Text;
                 string email = textEmail.Text;
                 int telefono = int.Parse(TextTelefono.Text);
+
                 Empleado emp = new Empleado(num,nombres,apellidos,email,telefono);
                 BussEmpleado.Insert(emp);
                 Response.Redirect("index.aspx");

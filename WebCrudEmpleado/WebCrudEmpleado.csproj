@@ -67,16 +67,37 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Css\bootstrap.css" />
     <Content Include="Css\estilos.css" />
+    <Content Include="editar.aspx" />
+    <Content Include="eliminar.aspx" />
     <Content Include="Img\add.png" />
+    <Content Include="Img\borrar.png" />
+    <Content Include="Img\editar.png" />
     <Content Include="Img\nuevo.png" />
     <Content Include="index.aspx" />
+    <Content Include="js\bootstrap.js" />
+    <Content Include="js\jquery-3.3.1.js" />
     <Content Include="nuevo.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Buss\BussEmpleado.cs" />
     <Compile Include="Data\BaseDatos.cs" />
+    <Compile Include="editar.aspx.cs">
+      <DependentUpon>editar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="editar.aspx.designer.cs">
+      <DependentUpon>editar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="eliminar.aspx.cs">
+      <DependentUpon>eliminar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="eliminar.aspx.designer.cs">
+      <DependentUpon>eliminar.aspx</DependentUpon>
+    </Compile>
     <Compile Include="index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

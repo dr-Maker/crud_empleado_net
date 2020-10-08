@@ -22,6 +22,16 @@ namespace WebCrudEmpleado
         {
             Response.Redirect("nuevo.aspx");
         }
+
+
+        protected void gvEmpleados_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+            int fila = e.NewEditIndex;
+            string num = gvEmpleados.Rows[fila].Cells[0].Text;
+            Response.Redirect("editar.aspx?id="+ num);
+        }
+
+  
     }
 
    

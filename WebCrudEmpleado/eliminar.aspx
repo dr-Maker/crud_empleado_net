@@ -1,12 +1,12 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="nuevo.aspx.cs" Inherits="WebCrudEmpleado.nuevo" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="eliminar.aspx.cs" Inherits="WebCrudEmpleado.eliminar" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Nuevo Empleado</title>
     <link href="Css/bootstrap.css" rel="stylesheet" />
+    <title>Eliminar</title>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -14,12 +14,11 @@
             <div class="card">
 
             <div class="card-header">
-                <h1 class="text-center">Nuevo Empleado</h1>
+                <h1 class="text-center">Eliminar</h1>
             </div>
 
                     <div class="card-body">
         
-    
 
                             <div class="form-group row">
                                     <asp:Label CssClass="col-sm-2 col-form-label" Text="Num.Empleado" runat="server"></asp:Label>

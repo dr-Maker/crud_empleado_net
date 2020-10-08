@@ -10,7 +10,7 @@
 namespace WebCrudEmpleado {
     
     
-    public partial class nuevo {
+    public partial class eliminar {
         
         /// <summary>
         /// Control form1.
