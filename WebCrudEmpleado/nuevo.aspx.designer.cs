@@ -22,15 +22,6 @@ namespace WebCrudEmpleado {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Control TextNum.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextNum;
-        
-        /// <summary>
         /// Control textNombres.
         /// </summary>
         /// <remarks>
@@ -38,6 +29,15 @@ namespace WebCrudEmpleado {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox textNombres;
+        
+        /// <summary>
+        /// Control txtNombresValdiador.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator txtNombresValdiador;
         
         /// <summary>
         /// Control textApellidos.
@@ -49,6 +49,15 @@ namespace WebCrudEmpleado {
         protected global::System.Web.UI.WebControls.TextBox textApellidos;
         
         /// <summary>
+        /// Control textApellidosValidador.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator textApellidosValidador;
+        
+        /// <summary>
         /// Control textEmail.
         /// </summary>
         /// <remarks>
@@ -58,6 +67,24 @@ namespace WebCrudEmpleado {
         protected global::System.Web.UI.WebControls.TextBox textEmail;
         
         /// <summary>
+        /// Control textEmailValidador.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator textEmailValidador;
+        
+        /// <summary>
+        /// Control textEmailValidadorFormato.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator textEmailValidadorFormato;
+        
+        /// <summary>
         /// Control TextTelefono.
         /// </summary>
         /// <remarks>
@@ -65,6 +92,24 @@ namespace WebCrudEmpleado {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextTelefono;
+        
+        /// <summary>
+        /// Control TextTelefonoValidador.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator TextTelefonoValidador;
+        
+        /// <summary>
+        /// Control txtTelefonoNumerico.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator txtTelefonoNumerico;
         
         /// <summary>
         /// Control btnGrabar.

@@ -32,6 +32,13 @@ namespace WebCrudEmpleado
         }
 
   
+
+        protected void gvEmpleados_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            int fila = e.RowIndex;
+            string num = gvEmpleados.Rows[fila].Cells[0].Text;
+            Response.Redirect("eliminar.aspx?id="+num);
+        }
     }
 
    

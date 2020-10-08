@@ -12,32 +12,29 @@
     <form id="form1" runat="server">
         <div class="container">
             <div class="card">
-               <div class="card-header">
-                <h1 class="text-center">Lista Empleados</h1>
-               </div>
-
-                <div class="card-body">
-                    <asp:ImageButton  ID="ibNuevo" runat="server" ImageUrl="~/Img/add.png" OnClick="ibnuevo_click"/> 
-              
-                
-
-                <asp:GridView ID="gvEmpleados" runat="server" AutoGenerateColumns="False" CssClass="table table-bordered table-striped"    
-                    OnRowEditing="gvEmpleados_RowEditing" >
-                    <Columns>
-                        <asp:BoundField DataField="num" HeaderText="Num.Empleado" />
-                        <asp:BoundField DataField="nombres" HeaderText="Nombre" />
-                        <asp:BoundField DataField="apellidos" HeaderText="Apellido" />
-                        <asp:BoundField DataField="email" HeaderText="Email" />
-                        <asp:BoundField DataField="telefono" HeaderText="Teléfono" />
-                        <asp:CommandField ButtonType="Image" HeaderText="Editar" EditImageUrl="~/Img/editar.png" DeleteText="Editar"  ShowEditButton="True" />
-                        
-                    </Columns>   
-                </asp:GridView>
+                <div class="card-header">
+                    <h1 class="text-center">Lista Empleados</h1>
                 </div>
+                <div class="card-body">
+                    <asp:ImageButton ID="ibNuevo" runat="server" ImageUrl="~/Img/add.png" OnClick="ibnuevo_click" />
+                    <asp:GridView ID="gvEmpleados" runat="server" AutoGenerateColumns="False" CssClass="table table-bordered table-striped"
+                        OnRowEditing="gvEmpleados_RowEditing" 
+                        OnRowDeleting="gvEmpleados_RowDeleting"
+                        >
+                        <Columns>
+                            <asp:BoundField DataField="num" HeaderText="Num.Empleado" />
+                            <asp:BoundField DataField="nombres" HeaderText="Nombre" />
+                            <asp:BoundField DataField="apellidos" HeaderText="Apellido" />
+                            <asp:BoundField DataField="email" HeaderText="Email" />
+                            <asp:BoundField DataField="telefono" HeaderText="Teléfono" />
 
+                            <asp:CommandField ButtonType="Image" HeaderText="Editar" EditImageUrl="~/Img/editar.png"  ShowEditButton="True" />
+                            <asp:CommandField ButtonType="Image" HeaderText="Eliminar" DeleteImageUrl="~/Img/borrar.png" ShowDeleteButton="True" />
+                        </Columns>
+                    </asp:GridView>
                 </div>
             </div>
-        </form>
-    
+        </div>
+    </form>
 </body>
 </html>
